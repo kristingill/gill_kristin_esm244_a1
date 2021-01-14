@@ -1,0 +1,18 @@
+---
+title: "Kristin Gill"
+image: "Kristin_website.jpg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/kristin-gill-285805102/"
+  - label: Facebook
+    url: "https://www.facebook.com/kristin.gill.714"
+  - label: GitHub
+    url: "https://github.com/kristingill"
+  - label: Email
+    url: "kristin_gill@bren.ucsb.edu"
+output:
+  postcards::trestles
+site: distill::distill_website
+---
+ 
+I am currently pursuing a Master of Environmental Science and Management at the Bren school (UCSB). I graduated magna cum laude from The University of California, San Diego in 2019 with a Bachelor of Science in Environmental Systems (Ecology, Behavior, and Evolution). Through my diverse work experiences, I have become interested in the use of ArcGIS to understand social ecological systems and environmental economic issues. I am interested in further developing my Spanish language skills for use in future jobs and research. At the Bren school, I am pursuing specializations in Economics and Politics of the Environment and Coastal Marine Resource Management. 
