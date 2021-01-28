@@ -4,8 +4,8 @@ image: "Kristin_website.jpg"
 links:
   - label: LinkedIn
     url: "https://www.linkedin.com/in/kristin-gill-285805102/"
-  - label: Facebook
-    url: "https://www.facebook.com/kristin.gill.714"
+  - label: Resume
+    url: "https://1drv.ms/b/s!Ao286deaaKqYg-pk8eZLYVPPb4tA7g"
   - label: GitHub
     url: "https://github.com/kristingill"
   - label: Email
