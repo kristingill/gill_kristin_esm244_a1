@@ -87,7 +87,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>TidyTuesday: Visualizing Plastic Pollution</title>
 
-  <meta property="description" itemprop="description" content="This post contains the code and output for the 2021-01-26 TidyTuesday."/>
+  <meta property="description" itemprop="description" content="This post contains the code and a map of Pepsi plastic pollution that I created for the 2021-01-26 TidyTuesday."/>
 
 
   <!--  https://schema.org/Article -->
@@ -98,24 +98,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="TidyTuesday: Visualizing Plastic Pollution"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="This post contains the code and output for the 2021-01-26 TidyTuesday."/>
+  <meta property="og:description" content="This post contains the code and a map of Pepsi plastic pollution that I created for the 2021-01-26 TidyTuesday."/>
   <meta property="og:locale" content="en_US"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="TidyTuesday: Visualizing Plastic Pollution"/>
-  <meta property="twitter:description" content="This post contains the code and output for the 2021-01-26 TidyTuesday."/>
+  <meta property="twitter:description" content="This post contains the code and a map of Pepsi plastic pollution that I created for the 2021-01-26 TidyTuesday."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["TidyTuesday: Visualizing Plastic Pollution"]},{"type":"character","attributes":{},"value":["This post contains the code and output for the 2021-01-26 TidyTuesday.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Kristin Gill"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["02-02-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["hide"]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["TidyTuesday: Visualizing Plastic Pollution"]},{"type":"character","attributes":{},"value":["This post contains the code and a map of Pepsi plastic pollution that I created for the 2021-01-26 TidyTuesday.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Kristin Gill"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["02-02-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["hide"]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.cpg","99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.dbf","99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.prj","99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.shp","99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.shx","data_2/99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.cpg","data_2/99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.dbf","data_2/99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.prj","data_2/99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.shp","data_2/99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.shx","data_2/World_Countries__Generalized_.cpg","data_2/World_Countries__Generalized_.dbf","data_2/World_Countries__Generalized_.prj","data_2/World_Countries__Generalized_.shp","data_2/World_Countries__Generalized_.shx","data_2/world_country_and_usa_states_latitude_and_longitude_values.csv","tidytuesday-visualizing-plastic-pollution_files/anchor-4.2.2/anchor.min.js","tidytuesday-visualizing-plastic-pollution_files/bowser-1.9.3/bowser.min.js","tidytuesday-visualizing-plastic-pollution_files/distill-2.2.21/template.v2.js","tidytuesday-visualizing-plastic-pollution_files/figure-html5/unnamed-chunk-2-1.png","tidytuesday-visualizing-plastic-pollution_files/figure-html5/unnamed-chunk-3-1.png","tidytuesday-visualizing-plastic-pollution_files/figure-html5/unnamed-chunk-4-1.png","tidytuesday-visualizing-plastic-pollution_files/header-attrs-2.6.6/header-attrs.js","tidytuesday-visualizing-plastic-pollution_files/jquery-1.11.3/jquery.min.js","tidytuesday-visualizing-plastic-pollution_files/popper-2.6.0/popper.min.js","tidytuesday-visualizing-plastic-pollution_files/tippy-6.2.7/tippy-bundle.umd.min.js","tidytuesday-visualizing-plastic-pollution_files/tippy-6.2.7/tippy-light-border.css","tidytuesday-visualizing-plastic-pollution_files/tippy-6.2.7/tippy.css","tidytuesday-visualizing-plastic-pollution_files/tippy-6.2.7/tippy.umd.min.js","tidytuesday-visualizing-plastic-pollution_files/webcomponents-2.0.0/webcomponents.js","World_Countries__Generalized_.cpg","World_Countries__Generalized_.dbf","World_Countries__Generalized_.prj","World_Countries__Generalized_.shp","World_Countries__Generalized_.shx","world_country_and_usa_states_latitude_and_longitude_values.csv"]}
+  {"type":"character","attributes":{},"value":["99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.cpg","99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.dbf","99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.prj","99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.shp","99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.shx","data_2/99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.cpg","data_2/99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.dbf","data_2/99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.prj","data_2/99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.shp","data_2/99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.shx","data_2/World_Countries__Generalized_.cpg","data_2/World_Countries__Generalized_.dbf","data_2/World_Countries__Generalized_.prj","data_2/World_Countries__Generalized_.shp","data_2/World_Countries__Generalized_.shx","data_2/world_country_and_usa_states_latitude_and_longitude_values.csv","pepsi_plastic.jpg","tidytuesday-visualizing-plastic-pollution_files/anchor-4.2.2/anchor.min.js","tidytuesday-visualizing-plastic-pollution_files/bowser-1.9.3/bowser.min.js","tidytuesday-visualizing-plastic-pollution_files/distill-2.2.21/template.v2.js","tidytuesday-visualizing-plastic-pollution_files/figure-html5/unnamed-chunk-2-1.png","tidytuesday-visualizing-plastic-pollution_files/figure-html5/unnamed-chunk-3-1.png","tidytuesday-visualizing-plastic-pollution_files/figure-html5/unnamed-chunk-4-1.png","tidytuesday-visualizing-plastic-pollution_files/header-attrs-2.6.6/header-attrs.js","tidytuesday-visualizing-plastic-pollution_files/jquery-1.11.3/jquery.min.js","tidytuesday-visualizing-plastic-pollution_files/popper-2.6.0/popper.min.js","tidytuesday-visualizing-plastic-pollution_files/tippy-6.2.7/tippy-bundle.umd.min.js","tidytuesday-visualizing-plastic-pollution_files/tippy-6.2.7/tippy-light-border.css","tidytuesday-visualizing-plastic-pollution_files/tippy-6.2.7/tippy.css","tidytuesday-visualizing-plastic-pollution_files/tippy-6.2.7/tippy.umd.min.js","tidytuesday-visualizing-plastic-pollution_files/webcomponents-2.0.0/webcomponents.js","World_Countries__Generalized_.cpg","World_Countries__Generalized_.dbf","World_Countries__Generalized_.prj","World_Countries__Generalized_.shp","World_Countries__Generalized_.shx","world_country_and_usa_states_latitude_and_longitude_values.csv"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1454,7 +1454,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"TidyTuesday: Visualizing Plastic Pollution","description":"This post contains the code and output for the 2021-01-26 TidyTuesday.","authors":[{"author":"Kristin Gill","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-02-02T00:00:00.000-08:00","citationText":"Gill, 2021"}
+{"title":"TidyTuesday: Visualizing Plastic Pollution","description":"This post contains the code and a map of Pepsi plastic pollution that I created for the 2021-01-26 TidyTuesday.","authors":[{"author":"Kristin Gill","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-02-02T00:00:00.000-08:00","citationText":"Gill, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1467,7 +1467,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1>TidyTuesday: Visualizing Plastic Pollution</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>This post contains the code and output for the 2021-01-26 TidyTuesday.</p></p>
+<p><p>This post contains the code and a map of Pepsi plastic pollution that I created for the 2021-01-26 TidyTuesday.</p></p>
 </div>
 
 <div class="d-byline">
@@ -1477,7 +1477,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<h2 id="wrangling-the-data">Wrangling the Data</h2>
+<figure>
+<img src="pepsi_plastic.jpg" alt="Pepsi Plastic Pollution Image from The Guardian" /><figcaption aria-hidden="true">Pepsi Plastic Pollution <em>Image from The Guardian</em></figcaption>
+</figure>
+<h3 id="summary">Summary</h3>
+<p>This project utilizes plastic data provided by <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-01-26">TidyTuesday</a> and the organization <a href="https://www.breakfreefromplastic.org/about/#">Break Free From Plastic</a>. To create this visualization, I downloaded country latitude/longitude data and merged it with the plastics data set by “country”. I also downloaded data for a base map. Initially, my base map and points did not line up correctly. I thought this was a problem with the data I downloaded, so I kept searching for different data and learned about different packages (jsonlite, geojsonR, leaflet), functions, and data types (geojson). After all of that, I realized that I just needed to switch the order of c(“latitude”, “longitude”) to c(“longitude”, “latitude”) when converting the merged csv to a shapefile. This is so that longitude is recognized as x and latitude as y. Another troubleshooting problem I ran into was that not all of the countries showed up in the merged data frame, so I needed to go back and make sure all of the country names matched between the data frames.</p>
+<h4 id="main-takeaways"><strong>Main Takeaways</strong></h4>
+<ul>
+<li>How to merge spatial data with a csv file by a column.
+<ul>
+<li>Always make sure longitude is in the x position and latitude is in the y position.</li>
+<li>Also make sure everything in a column matches for a merge.</li>
+</ul></li>
+<li>How to customize maps, using theme (panel.grid.major, panel.background, panel.border) and coord_sf(xlim, ylim).</li>
+</ul>
+<h3 id="wrangling-the-data">Wrangling the Data</h3>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -1518,7 +1532,50 @@ hide
 </div>
 </details>
 </div>
-<h2 id="creating-the-map">Creating the Map</h2>
+<h3 id="transforming-to-shapefile-and-setting-crs">Transforming to Shapefile and Setting CRS</h3>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>data_shapefile</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://r-spatial.github.io/sf/reference/st_as_sf.html'>st_as_sf</a></span><span class='op'>(</span><span class='va'>merge_2</span>, coords <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"longitude"</span>, <span class='st'>"latitude"</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://r-spatial.github.io/sf/reference/st_transform.html'>st_transform</a></span><span class='op'>(</span><span class='va'>world_countries_map</span>, <span class='fl'>4326</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<pre><code>Simple feature collection with 249 features and 7 fields
+geometry type:  MULTIPOLYGON
+dimension:      XY
+bbox:           xmin: -180 ymin: -89 xmax: 180 ymax: 83.6236
+geographic CRS: WGS 84
+# A tibble: 249 x 8
+     fid country iso   countryaff aff_iso shape_leng shape_area
+ * &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;
+ 1     1 Americ~ AS    United St~ US           0.600   0.0137  
+ 2     2 United~ UM    United St~ US           0.480   0.00322 
+ 3     3 Cook I~ CK    New Zeala~ NZ           0.981   0.0131  
+ 4     4 French~ PF    France     FR           3.93    0.175   
+ 5     5 Niue    NU    New Zeala~ NZ           0.541   0.0214  
+ 6     6 Pitcai~ PN    United Ki~ GB           0.338   0.00429 
+ 7     7 Samoa   WS    Samoa      WS           3.02    0.246   
+ 8     8 Tokelau TK    New Zeala~ NZ           0.109   0.000606
+ 9     9 Tonga   TO    Tonga      TO           1.31    0.0400  
+10    10 Wallis~ WF    France     FR           0.701   0.0134  
+# ... with 239 more rows, and 1 more variable: geometry &lt;MULTIPOLYGON
+#   [°]&gt;</code></pre>
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://r-spatial.github.io/sf/reference/st_crs.html'>st_crs</a></span><span class='op'>(</span><span class='va'>data_shapefile</span><span class='op'>)</span> <span class='op'>=</span> <span class='fl'>4326</span>
+</code></pre>
+</div>
+</details>
+</div>
+<h3 id="creating-the-map">Creating the Map</h3>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -1540,7 +1597,7 @@ hide
 </details>
 <p><img src="tidytuesday-visualizing-plastic-pollution_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

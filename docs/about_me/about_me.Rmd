@@ -9,9 +9,9 @@ email: "kristin_gill@ucsb.edu"
 github: kristingill
 linkedin: Kristin Gill
 date: "`r format(Sys.time(), '%B %Y')`"
-output: 
+output:
   vitae::markdowncv:
-theme: postcards.css
+  css: postcards.css
 ---
 
 ```{r setup, include=FALSE}

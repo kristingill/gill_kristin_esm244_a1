@@ -1,7 +1,7 @@
 ---
 title: "TidyTuesday: Visualizing Plastic Pollution"
 description: |
-  This post contains the code and output for the 2021-01-26 TidyTuesday.
+  This post contains the code and a map of Pepsi plastic pollution that I created for the 2021-01-26 TidyTuesday.
 author:
   - name: Kristin Gill
     url: {}
@@ -11,6 +11,18 @@ output:
     self_contained: false
     code_folding: hide
 ---
+
+![Pepsi Plastic Pollution *Image from The Guardian*](pepsi_plastic.jpg)
+
+### Summary
+This project utilizes plastic data provided by [TidyTuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-01-26) and the organization [Break Free From Plastic](https://www.breakfreefromplastic.org/about/#). To create this visualization, I downloaded country latitude/longitude data and merged it with the plastics data set by “country”. I also downloaded data for a base map. Initially, my base map and points did not line up correctly. I thought this was a problem with the data I downloaded, so I kept searching for different data and learned about different packages (jsonlite, geojsonR, leaflet), functions, and data types (geojson). After all of that, I realized that I just needed to switch the order of c(“latitude”, “longitude”) to c(“longitude”, “latitude”) when converting the merged csv to a shapefile. This is so that longitude is recognized as x and latitude as y. Another troubleshooting problem I ran into was that not all of the countries showed up in the merged data frame, so I needed to go back and make sure all of the country names matched between the data frames. 
+
+#### **Main Takeaways**
+- How to merge spatial data with a csv file by a column. 
+    - Always make sure longitude is in the x position and latitude is in the y position.
+    - Also make sure everything in a column matches for a merge. 
+- How to customize maps, using theme (panel.grid.major, panel.background, panel.border) and coord_sf(xlim, ylim).
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
@@ -29,7 +41,7 @@ library(leaflet)
 library(janitor)
 ```
 
-## Wrangling the Data
+### Wrangling the Data
 ```{r}
 # read in the data
 plastics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-01-26/plastics.csv') %>% 
@@ -61,9 +73,11 @@ world_countries_map <- read_sf("World_Countries__Generalized_.shp") %>%
 merged_data <- merge(plastics, world_countries_map, by = "country")
 
 merge_2 <- merge(merged_data, country_lat_long, by = "country")
+
 ```
 
-```{r, include = FALSE}
+### Transforming to Shapefile and Setting CRS
+```{r}
 data_shapefile <- st_as_sf(merge_2, coords = c("longitude", "latitude"))
 
 st_transform(world_countries_map, 4326)
@@ -71,7 +85,7 @@ st_transform(world_countries_map, 4326)
 st_crs(data_shapefile) = 4326
 ```
 
-## Creating the Map
+### Creating the Map
 ```{r}
 ggplot()+
   geom_sf(data = world_countries_map, size = 0.5, color = "darkgray", fill = "antiquewhite1") +
