@@ -1,0 +1,69 @@
+---
+title: "Kristin Gill"
+image: "Kristin_website.jpg"
+theme: panel_set.css
+---
+ 
+Interests (1 - 2 short paragraphs)
+Experience / projects (1 - 2 short paragraphs)
+Feel free to add pictures of your work/field work, etc.
+
+## EDUCATION
+### Master of Environmental Science and Management, (Expected June 2022)
+- Bren School of Environmental Science & Management – University of California, Santa Barbara (UCSB)
+- Specialization: Economics and Politics of the Environment and Coastal Marine Resource Management
+- Focus: Strategic Environmental Communication and Media
+- Highlighted Coursework: Writing Skills for Environmental Professionals, GIS, Data Visualization
+
+### Bachelor of Science in Environmental Systems, 3.86 GPA (June 2019)
+- University of California, San Diego (UCSD)
+- Honors/Awards: Provost Honors, Phi Beta Kappa Honor Society, Golden Key International Honor Society, National Society of Leadership and Success, award for proposing a UCSD Bike-Share program
+- Leadership/Involvement: InterVarsity Leadership and Vision Team
+
+## ENVIRONMENTAL EXPERIENCE
+### Research Assistant – Scripps Institution of Oceanography, San Diego, CA (9/19–3/20)
+- Assisted in a suitability analysis for dive sites in Mexico, using ArcGIS Pro, to determine the most accessible dive sites in Mexico, considering factors like proximity to airports and types of roads nearby
+
+- Constructed a reproducible workflow in Python to merge and clean 30 Excel sheets of census data
+
+- Created the first map of formal and informal fishing ports in Mexico, using ArcGIS and Google Earth, to contribute to the suitability analysis that will be part of a published paper by the Aburto Lab
+
+### Sustainability Intern – Gaia Servicios Ambientales, Medellín, Colombia (7/19–9/19)
+- Consolidated greenhouse gas emissions data in Excel for 5+ Colombian companies to use to calculate total greenhouse gas emissions for each company
+- Researched Science Based Targets calculation methods, creating a comprehensive PowerPoint in English and Spanish to be used by managers for client presentations
+- Improved professional and conversational Spanish skills by communicating daily with coworkers and participating in work events, including a volunteer tree-planting project
+- Recommended methods for jean and motorcycle factories to reduce waste
+
+### Education Intern – I Love A Clean San Diego (ILACSD), San Diego, CA (9/18–6/19)
+- Created an environmental curriculum focused on food and plastic waste for Girl and Boy Scout troops, and presented the material to a Daisy troop
+- Solicited donations from businesses for the Zero Waste Fair raffle fundraiser, receiving donations from 5+ businesses, including over 100 reusable Stasher bags 
+- Utilized Canva weekly to create flyers for events and informational e-handouts that were used to advertise for workshops and as educational materials at workshops
+- Set up the aerial artwork and facilitated adding kids to the design, as part of a team, for Kids’ Ocean Day 
+
+### Blum Summer Field Intern – UCSD Center on Global Justice, San Diego, CA/Tijuana, MX (6/18–8/18)
+
+- Recorded interviews with 8+ residents about flooding and erosion in 3 underserved communities of Los Laureles Canyon, marking GPS coordinates to include in supervisor’s PhD dissertation
+- Authored a 5-page report, as part of a team, on the work accomplished and provided ideas for the future
+- Mapped 3 erosion hotspots in Los Laureles Canyon, using Google Earth, to visualize areas that deliver the most sediment to the Tijuana Estuary
+
+### Plant With Purpose, San Diego, CA (9/17–3/18)
+#### Development Assistant (11/17–3/18)
+- Managed the Customer Relationship Management (CRM) database (Bloomerang) with high attention to detail to ensure accurate and updated donor information for over 1,000 donors
+- Mailed and emailed donation receipts to each donor every week, utilizing Bloomerang
+- Connected Plant With Purpose’s Bay Area regional representative with Rotary of San Jose  
+- Documented Major Donor Team Performance metrics and distributed them to the team weekly to encourage fun, healthy competition and focus on meeting fundraising targets
+
+#### Grant Writing Intern (9/17–11/17)
+- Edited 20+ proposals, cover letters, and reports
+- Drafted a grant proposal to secure funding for the non-profit 
+- Became familiar with Bloomerang, Wiki, Foundation Directory Online, 990s/annual reports
+
+## ADDITIONAL EXPERIENCE
+### Legal Assistant – Law Offices of Timothy Gill, San Jose, CA (4/20–9/20)
+- Authored legal documents: settlement statements and demand letters; called insurance companies, chiropractic offices, and police departments to obtain up-to-date information on cases
+
+## SKILLS, CERTIFICATIONS, & INTERNATIONAL EXPERIENCE
+- **Computer:** R/Rstudio, ArcGIS Pro, Google Earth, Outlook, Python, Word, Excel, Canva, Bloomerang
+- **Language:** Native English, intermediate Spanish
+- **Certifications:** Fundamentals of GIS; Geospatial and Environmental Analysis; Python Data Structures; Programming for Everybody (Getting Started with Python); Imagery, Automation, and Applications
+- **International Experience:** Study Abroad: Revelle in Rome; University of Oxford, Smith School of Enterprise and the Environment Summer Program (6/19-7/19); Amazon Riverboat Expedition Iquitos, Peru 

@@ -11,7 +11,7 @@ linkedin: Kristin Gill
 date: "`r format(Sys.time(), '%B %Y')`"
 output:
   vitae::markdowncv:
-  css: postcards.css
+    css: postcards.css
 ---
 
 ```{r setup, include=FALSE}
