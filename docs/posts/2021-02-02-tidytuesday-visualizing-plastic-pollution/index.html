@@ -85,38 +85,38 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-<title>Kristin Gill: Welcome!</title>
+<title>Kristin Gill: TidyTuesday: Visualizing Plastic Pollution</title>
 
-<meta property="description" itemprop="description" content="Welcome to my website and blog. My name is Kristin Gill and I am a master student at the Bren School of Environmental Science &amp; Management."/>
+<meta property="description" itemprop="description" content="This post contains the code and output for the 2021-01-26 TidyTuesday."/>
 
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2021-01-13"/>
-<meta property="article:created" itemprop="dateCreated" content="2021-01-13"/>
+<meta property="article:published" itemprop="datePublished" content="2021-02-02"/>
+<meta property="article:created" itemprop="dateCreated" content="2021-02-02"/>
 <meta name="article:author" content="Kristin Gill"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Kristin Gill: Welcome!"/>
+<meta property="og:title" content="Kristin Gill: TidyTuesday: Visualizing Plastic Pollution"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="Welcome to my website and blog. My name is Kristin Gill and I am a master student at the Bren School of Environmental Science &amp; Management."/>
+<meta property="og:description" content="This post contains the code and output for the 2021-01-26 TidyTuesday."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Kristin Gill"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="Kristin Gill: Welcome!"/>
-<meta property="twitter:description" content="Welcome to my website and blog. My name is Kristin Gill and I am a master student at the Bren School of Environmental Science &amp; Management."/>
+<meta property="twitter:title" content="Kristin Gill: TidyTuesday: Visualizing Plastic Pollution"/>
+<meta property="twitter:description" content="This post contains the code and output for the 2021-01-26 TidyTuesday."/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Welcome!"]},{"type":"character","attributes":{},"value":["Welcome to my website and blog. My name is Kristin Gill and I am a master student at the Bren School of Environmental Science & Management."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Kristin Gill"]}]}]},{"type":"character","attributes":{},"value":["01-13-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["TidyTuesday: Visualizing Plastic Pollution"]},{"type":"character","attributes":{},"value":["This post contains the code and output for the 2021-01-26 TidyTuesday."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Kristin Gill"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["02-02-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["hide"]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["welcome_files/anchor-4.2.2/anchor.min.js","welcome_files/bowser-1.9.3/bowser.min.js","welcome_files/distill-2.2.21/template.v2.js","welcome_files/header-attrs-2.6.6/header-attrs.js","welcome_files/jquery-1.11.3/jquery.min.js","welcome_files/popper-2.6.0/popper.min.js","welcome_files/tippy-6.2.7/tippy-bundle.umd.min.js","welcome_files/tippy-6.2.7/tippy-light-border.css","welcome_files/tippy-6.2.7/tippy.css","welcome_files/tippy-6.2.7/tippy.umd.min.js","welcome_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.cpg","99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.dbf","99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.prj","99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.shp","99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.shx","data_2/99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.cpg","data_2/99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.dbf","data_2/99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.prj","data_2/99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.shp","data_2/99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.shx","data_2/World_Countries__Generalized_.cpg","data_2/World_Countries__Generalized_.dbf","data_2/World_Countries__Generalized_.prj","data_2/World_Countries__Generalized_.shp","data_2/World_Countries__Generalized_.shx","data_2/world_country_and_usa_states_latitude_and_longitude_values.csv","tidytuesday-visualizing-plastic-pollution_files/anchor-4.2.2/anchor.min.js","tidytuesday-visualizing-plastic-pollution_files/bowser-1.9.3/bowser.min.js","tidytuesday-visualizing-plastic-pollution_files/distill-2.2.21/template.v2.js","tidytuesday-visualizing-plastic-pollution_files/figure-html5/unnamed-chunk-2-1.png","tidytuesday-visualizing-plastic-pollution_files/figure-html5/unnamed-chunk-3-1.png","tidytuesday-visualizing-plastic-pollution_files/figure-html5/unnamed-chunk-4-1.png","tidytuesday-visualizing-plastic-pollution_files/header-attrs-2.6.6/header-attrs.js","tidytuesday-visualizing-plastic-pollution_files/jquery-1.11.3/jquery.min.js","tidytuesday-visualizing-plastic-pollution_files/popper-2.6.0/popper.min.js","tidytuesday-visualizing-plastic-pollution_files/tippy-6.2.7/tippy-bundle.umd.min.js","tidytuesday-visualizing-plastic-pollution_files/tippy-6.2.7/tippy-light-border.css","tidytuesday-visualizing-plastic-pollution_files/tippy-6.2.7/tippy.css","tidytuesday-visualizing-plastic-pollution_files/tippy-6.2.7/tippy.umd.min.js","tidytuesday-visualizing-plastic-pollution_files/webcomponents-2.0.0/webcomponents.js","World_Countries__Generalized_.cpg","World_Countries__Generalized_.dbf","World_Countries__Generalized_.prj","World_Countries__Generalized_.shp","World_Countries__Generalized_.shx","world_country_and_usa_states_latitude_and_longitude_values.csv"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2385,7 +2385,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Welcome!","description":"Welcome to my website and blog. My name is Kristin Gill and I am a master student at the Bren School of Environmental Science & Management.","authors":[{"author":"Kristin Gill","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-01-13T00:00:00.000-08:00","citationText":"Gill, 2021"}
+{"title":"TidyTuesday: Visualizing Plastic Pollution","description":"This post contains the code and output for the 2021-01-26 TidyTuesday.","authors":[{"author":"Kristin Gill","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-02-02T00:00:00.000-08:00","citationText":"Gill, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2419,19 +2419,82 @@ Projects
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Welcome!</h1>
+<h1>TidyTuesday: Visualizing Plastic Pollution</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Welcome to my website and blog. My name is Kristin Gill and I am a master student at the Bren School of Environmental Science &amp; Management.</p></p>
+<p><p>This post contains the code and output for the 2021-01-26 TidyTuesday.</p></p>
 </div>
 
 <div class="d-byline">
-  Kristin Gill  
+  Kristin Gill true 
   
-<br/>01-13-2021
+<br/>02-02-2021
 </div>
 
 <div class="d-article">
+<h2 id="wrangling-the-data">Wrangling the Data</h2>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># read in the data</span>
+<span class='va'>plastics</span> <span class='op'>&lt;-</span> <span class='fu'>readr</span><span class='fu'>::</span><span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='st'>'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-01-26/plastics.csv'</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>!</span><span class='va'>grand_total</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>pivot_longer</span><span class='op'>(</span>cols <span class='op'>=</span> <span class='fl'>5</span><span class='op'>:</span><span class='fl'>11</span>, names_to <span class='op'>=</span> <span class='st'>"plastics"</span>, values_to <span class='op'>=</span> <span class='st'>"counts"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>year</span> <span class='op'>==</span> <span class='fl'>2020</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'>str_detect</span><span class='op'>(</span><span class='va'>parent_company</span>, <span class='st'>"Pepsi"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>parent_company</span> <span class='op'>==</span> <span class='st'>"Pepsico"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>!</span><span class='va'>volunteers</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>!</span><span class='va'>empty</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>!</span><span class='va'>num_events</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>country <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span>
+    <span class='va'>country</span> <span class='op'>==</span> <span class='st'>"United States of America"</span> <span class='op'>~</span> <span class='st'>"United States"</span>,
+    <span class='va'>country</span> <span class='op'>==</span> <span class='st'>"United Kingdom of Great Britain &amp; Northern Ireland"</span> <span class='op'>~</span> <span class='st'>"United Kingdom"</span>,
+    <span class='va'>country</span> <span class='op'>==</span> <span class='st'>"Korea"</span> <span class='op'>~</span> <span class='st'>"South Korea"</span>,
+    <span class='cn'>TRUE</span> <span class='op'>~</span> <span class='fu'><a href='https://rdrr.io/pkg/raster/man/as.character.html'>as.character</a></span><span class='op'>(</span><span class='va'>country</span><span class='op'>)</span>
+  <span class='op'>)</span><span class='op'>)</span>
+
+<span class='co'># read in the data</span>
+<span class='va'>country_lat_long</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='st'>"world_country_and_usa_states_latitude_and_longitude_values.csv"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>country</span>, <span class='va'>latitude</span>, <span class='va'>longitude</span><span class='op'>)</span>
+
+<span class='va'>world_map</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://r-spatial.github.io/sf/reference/st_read.html'>read_sf</a></span><span class='op'>(</span><span class='st'>"99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.shp"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/pkg/janitor/man/clean_names.html'>clean_names</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span><span class='st'>"country"</span> <span class='op'>=</span> <span class='st'>"cntry_name"</span><span class='op'>)</span>
+
+<span class='va'>world_countries_map</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://r-spatial.github.io/sf/reference/st_read.html'>read_sf</a></span><span class='op'>(</span><span class='st'>"World_Countries__Generalized_.shp"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/janitor/man/clean_names.html'>clean_names</a></span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='co'># merge the data</span>
+<span class='va'>merged_data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/raster/man/merge.html'>merge</a></span><span class='op'>(</span><span class='va'>plastics</span>, <span class='va'>world_countries_map</span>, by <span class='op'>=</span> <span class='st'>"country"</span><span class='op'>)</span>
+
+<span class='va'>merge_2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/raster/man/merge.html'>merge</a></span><span class='op'>(</span><span class='va'>merged_data</span>, <span class='va'>country_lat_long</span>, by <span class='op'>=</span> <span class='st'>"country"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+</div>
+<h2 id="creating-the-map">Creating the Map</h2>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>world_countries_map</span>, size <span class='op'>=</span> <span class='fl'>0.5</span>, color <span class='op'>=</span> <span class='st'>"darkgray"</span>, fill <span class='op'>=</span> <span class='st'>"antiquewhite1"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>data_shapefile</span>, <span class='fu'>aes</span><span class='op'>(</span>size <span class='op'>=</span> <span class='va'>counts</span><span class='op'>)</span>, color <span class='op'>=</span> <span class='st'>"dodgerblue4"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>theme</span><span class='op'>(</span>panel.grid.major <span class='op'>=</span> <span class='fu'>element_line</span><span class='op'>(</span>colour <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span><span class='op'>(</span><span class='fl'>0.5</span><span class='op'>)</span>, linetype <span class='op'>=</span> <span class='st'>"dashed"</span>, 
+         size <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span>, panel.background <span class='op'>=</span> <span class='fu'>element_rect</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"aliceblue"</span><span class='op'>)</span>, 
+         panel.border <span class='op'>=</span> <span class='fu'>element_rect</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='cn'>NA</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>labs</span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Longitude"</span>,
+       y <span class='op'>=</span> <span class='st'>"Latitude"</span>,
+       title <span class='op'>=</span> <span class='st'>"Pepsi Plastic Found Around the World by Break Free from Plastic, 2020"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>coord_sf</span><span class='op'>(</span>xlim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>180</span>, <span class='fl'>180</span><span class='op'>)</span>, ylim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>90</span>, <span class='fl'>90</span><span class='op'>)</span>, expand <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><img src="tidytuesday-visualizing-plastic-pollution_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

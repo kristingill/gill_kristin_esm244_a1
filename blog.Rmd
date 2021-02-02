@@ -1,5 +1,8 @@
 ---
 title: "Project 1"
-listing: posts
+listing: 
+  posts:
+    - 2021-01-13-welcome
+    - 2021-02-02-tidytuesday-visualizing-plastic-pollution
 
 ---

@@ -1,9 +1,9 @@
 ---
-title: "welcome"
+title: "Welcome!"
 description: |
-  A short description of the post.
+  Welcome to my website and blog. My name is Kristin Gill and I am a master student at the Bren School of Environmental Science & Management.
 author:
-  - name: Unknown
+  - name: Kristin Gill
 date: 01-13-2021
 output:
   distill::distill_article:
@@ -15,8 +15,5 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
-
-Learn more about using Distill at <https://rstudio.github.io/distill>.
 
 

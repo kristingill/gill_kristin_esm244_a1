@@ -1,19 +1,36 @@
 [
   {
-    "path": "posts/2021-01-13-welcome/",
-    "title": "welcome",
-    "description": "A short description of the post.",
+    "path": "posts/2021-02-02-tidytuesday-visualizing-plastic-pollution/",
+    "title": "TidyTuesday: Visualizing Plastic Pollution",
+    "description": "This post contains the code and output for the 2021-01-26 TidyTuesday.",
     "author": [
       {
-        "name": "Unknown",
+        "name": "Kristin Gill",
+        "url": {}
+      }
+    ],
+    "date": "2021-02-02",
+    "categories": [],
+    "contents": "\r\nWrangling the Data\r\n\r\n\r\nhide\r\n\r\n# read in the data\r\nplastics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-01-26/plastics.csv') %>% \r\n  dplyr::select(!grand_total) %>% \r\n  pivot_longer(cols = 5:11, names_to = \"plastics\", values_to = \"counts\") %>% \r\n  filter(year == 2020) %>% \r\n  filter(str_detect(parent_company, \"Pepsi\")) %>% \r\n  filter(parent_company == \"Pepsico\") %>% \r\n  dplyr::select(!volunteers) %>% \r\n  dplyr::select(!empty) %>% \r\n  dplyr::select(!num_events) %>%\r\n  mutate(country = case_when(\r\n    country == \"United States of America\" ~ \"United States\",\r\n    country == \"United Kingdom of Great Britain & Northern Ireland\" ~ \"United Kingdom\",\r\n    country == \"Korea\" ~ \"South Korea\",\r\n    TRUE ~ as.character(country)\r\n  ))\r\n\r\n# read in the data\r\ncountry_lat_long <- read_csv(\"world_country_and_usa_states_latitude_and_longitude_values.csv\") %>% dplyr::select(country, latitude, longitude)\r\n\r\nworld_map <- read_sf(\"99bfd9e7-bb42-4728-87b5-07f8c8ac631c2020328-1-1vef4ev.lu5nk.shp\") %>% clean_names() %>% \r\n  rename(\"country\" = \"cntry_name\")\r\n\r\nworld_countries_map <- read_sf(\"World_Countries__Generalized_.shp\") %>% \r\n  clean_names()\r\n\r\n# merge the data\r\nmerged_data <- merge(plastics, world_countries_map, by = \"country\")\r\n\r\nmerge_2 <- merge(merged_data, country_lat_long, by = \"country\")\r\n\r\n\r\n\r\nCreating the Map\r\n\r\n\r\nhide\r\n\r\nggplot()+\r\n  geom_sf(data = world_countries_map, size = 0.5, color = \"darkgray\", fill = \"antiquewhite1\") +\r\n  geom_sf(data = data_shapefile, aes(size = counts), color = \"dodgerblue4\") +\r\n  theme(panel.grid.major = element_line(colour = gray(0.5), linetype = \"dashed\", \r\n         size = 0.5), panel.background = element_rect(fill = \"aliceblue\"), \r\n         panel.border = element_rect(fill = NA)) +\r\n  labs(x = \"Longitude\",\r\n       y = \"Latitude\",\r\n       title = \"Pepsi Plastic Found Around the World by Break Free from Plastic, 2020\") +\r\n  coord_sf(xlim = c(-180, 180), ylim = c(-90, 90), expand = FALSE)\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "posts/2021-02-02-tidytuesday-visualizing-plastic-pollution/tidytuesday-visualizing-plastic-pollution_files/figure-html5/unnamed-chunk-3-1.png",
+    "last_modified": "2021-02-02T08:27:13-08:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-01-13-welcome/",
+    "title": "Welcome!",
+    "description": "Welcome to my website and blog. My name is Kristin Gill and I am a master student at the Bren School of Environmental Science & Management.",
+    "author": [
+      {
+        "name": "Kristin Gill",
         "url": {}
       }
     ],
     "date": "2021-01-13",
     "categories": [],
-    "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
+    "contents": "\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-01-13T19:16:22-08:00",
+    "last_modified": "2021-02-02T08:02:29-08:00",
     "input_file": {}
   }
 ]
