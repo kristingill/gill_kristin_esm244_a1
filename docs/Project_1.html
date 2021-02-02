@@ -104,7 +104,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","image","output"]}},"value":[{"type":"character","attributes":{},"value":["Snowshoe Hares Bonanza Creek, Alaska"]},{"type":"character","attributes":{},"value":["snowshoe_hare.jpg"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["Snowshoe Hares Bonanza Creek, Alaska"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["code_folding","css"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["postcards.css"]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2367,6 +2367,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
+  <link rel="stylesheet" href="postcards.css" type="text/css"/>
 
 </head>
 
@@ -2417,6 +2418,7 @@ Projects
 
 
 <div class="d-article">
+<img src="snowshoe_hare.jpg" title="fig:" alt="Snowshoe Hare - Photo from National Wildlife Federation" />
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2444,7 +2446,7 @@ Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># read in the data</span>
-<span class='va'>bonanza_hare</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/here/man/here.html'>here</a></span><span class='op'>(</span><span class='st'>"data_1"</span>, <span class='st'>"bonanza_hares.csv"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>bonanza_hare</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/here/man/here.html'>here</a></span><span class='op'>(</span><span class='st'>"docs"</span>, <span class='st'>"data_1"</span>, <span class='st'>"bonanza_hares.csv"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>

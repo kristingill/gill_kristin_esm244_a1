@@ -1,11 +1,11 @@
 ---
 title: "Snowshoe Hares Bonanza Creek, Alaska"
-image: "snowshoe_hare.jpg"
 output:
   distill::distill_article:
     code_folding: true
+    css: postcards.css
 ---
- 
+![Snowshoe Hare - *Photo from National Wildlife Federation*](snowshoe_hare.jpg)
 ```{r setup}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 library(tidyverse)
@@ -21,7 +21,7 @@ library(broom)
 
 ```{r}
 # read in the data
-bonanza_hare <- read_csv(here("data_1", "bonanza_hares.csv"))
+bonanza_hare <- read_csv(here("docs", "data_1", "bonanza_hares.csv"))
 ```
 
 ## 1. Introduction
