@@ -21,7 +21,7 @@ library(broom)
 
 ```{r}
 # read in the data
-bonanza_hare <- read_csv(here("docs", "data_1", "bonanza_hares.csv"))
+bonanza_hare <- read_csv(here("data_1", "bonanza_hares.csv"))
 ```
 
 ## 1. Introduction
