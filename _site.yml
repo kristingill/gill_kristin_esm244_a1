@@ -11,6 +11,8 @@ navbar:
       href: blog.html
     - text: "Resume"
       href: resume.html
+    - text: "About Me"
+      href: about_kristin.html
     - text: "Projects"
       menu:
         - text: "Snowshoe Hares"

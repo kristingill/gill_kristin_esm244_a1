@@ -4,9 +4,14 @@ image: "Kristin_website.jpg"
 theme: panel_set.css
 ---
  
-Interests (1 - 2 short paragraphs)
-Experience / projects (1 - 2 short paragraphs)
-Feel free to add pictures of your work/field work, etc.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(tidyverse)
+library(pagedown)
+library(glue)
+library(purrr)
+```
 
 ## EDUCATION
 ### Master of Environmental Science and Management, (Expected June 2022)
