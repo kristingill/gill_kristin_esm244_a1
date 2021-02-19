@@ -8,14 +8,13 @@ output:
 ![Snowshoe Hare - *Photo from National Wildlife Federation*](snowshoe_hare.jpg)
 ```{r setup}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
-library(tidyverse)
 library(janitor)
 library(here)
 library(lubridate)
-library(ggplot2)
 library(kableExtra)
 library(knitr)
 library(effsize)
+library(tidyverse)
 library(broom)
 ```
 
@@ -163,7 +162,7 @@ juvenile_m <- juvenile_sex %>%
 
 # two sample t-test
 juvenile_ttest <- t.test(juvenile_f, juvenile_m)
-juvenile_ttest_tidy <- tidy(juvenile_ttest)
+juvenile_ttest_tidy <- broom::tidy(juvenile_ttest)
 
 # Cohen's d
 juvenile_effsize <- cohen.d(juvenile_m, juvenile_f)

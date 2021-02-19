@@ -1,0 +1,65 @@
+---
+title: "Oil Spill Spatial Data Visualization"
+author: "Kristin Gill"
+date: "2/18/2021"
+output: 
+  html_document:
+    code-folding: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(here)
+library(tmap)
+library(janitor)
+library(sf)
+```
+
+```{r, include = FALSE}
+# read in the data
+oil_spill <- read_sf(here("data_3", "oil_spill", "ds394.shp")) %>% 
+  clean_names()
+
+ca_counties <- read_sf(here("data_3", "county"), layer = "CA_Counties_TIGER2016") %>% 
+  clean_names() %>% 
+  select(name)
+
+ca_counties <- st_transform(ca_counties, st_crs(oil_spill))
+```
+
+## Interactive Oil Spill Events Locations
+```{r}
+tmap_mode("view")
+
+tm_shape(oil_spill) +
+  tm_dots()
+```
+
+## Map of Inland Oil Spills by County
+```{r, fig.cap = "**Map 1:** Inland oil spill counts by California county. Data from: Oil Spill Incident Tracking. 2009-07-23. California Department of Fish and Game, Office of Spill Prevention and Response. https://map.dfg.ca.gov/metadata/ds0394.html"}
+# finding the counts
+oil_spill_inland <- oil_spill %>% 
+  filter(inlandmari == "Inland") %>% 
+  rename("name" = "localecoun")
+
+# joining the data
+oil_county <- ca_counties %>% 
+  st_join(oil_spill_inland)
+
+# find counts
+spill_counts <- oil_county %>% 
+  count(name.x)
+
+# plotting the data
+ggplot(data = spill_counts) +
+  geom_sf(aes(fill = n),
+          color = "white",
+          size = 0.1) +
+  scale_fill_gradientn(colors = c("lightgray", "yellow1", "yellow2", "orange1", "orange2", "red")) +
+  theme_minimal() +
+  labs(fill = "Number of Inland Oil Spills",
+       title = "Number of Inland Oil Spills by California County, 2008",
+       x = "Longitude",
+       y = "Latitude")
+```
