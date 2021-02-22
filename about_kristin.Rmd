@@ -1,7 +1,6 @@
 ---
 title: "Kristin Gill"
-image: "tobi.jpg"
-theme: panel_set.css
+theme: ocean.css
 ---
  
 
