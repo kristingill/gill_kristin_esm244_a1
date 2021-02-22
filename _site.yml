@@ -19,5 +19,6 @@ navbar:
           href: Project_1.html
         - text: "Oil Spills"
           href: Project_2.html
-output: distill::distill_article
-theme: postcards.css
+output: 
+  distill::distill_article:
+    theme: postcards.css
