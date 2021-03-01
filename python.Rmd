@@ -2,7 +2,6 @@
 title: "Hangman Python"
 output:
   distill::distill_article:
-    code_folding: true
     css: postcards.css
 ---
 
@@ -10,13 +9,13 @@ output:
 library(reticulate)
 library(knitr)
 library(rmarkdown)
-#use_python("/usr/local/bin/python")
-use_python("/Users/kjstg/AppData/Local/Microsoft/WindowsApps/python.exe")
+library(htmltools)
+use_python("/usr/local/bin/python")
 knitr::knit_engines$set(python = reticulate::eng_python)
 ```
 
 
-```{python, cache = TRUE}
+```{python, cache = TRUE, eval = FALSE}
 def play():
   name = input("What's your name?")
   print("Hi " + name + " let's play some hangman!")
