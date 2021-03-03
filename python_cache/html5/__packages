@@ -21,3 +21,10 @@ broom
 tmap
 sf
 htmltools
+sp
+raster
+fasterize
+rnaturalearth
+rnaturalearthhires
+rgeos
+shiny

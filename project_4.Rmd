@@ -1,0 +1,59 @@
+---
+title: "California Coast Cetacean Species Richness"
+output:
+  distill::distill_article:
+    code_folding: true
+    css: postcards.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(raster)
+library(tidyverse)
+library(here)
+library(sf)
+library(fasterize)
+library(rnaturalearth)
+library(rnaturalearthhires)
+library(rgeos)
+```
+
+
+```{r}
+map <- ne_states(country = "united states of america", returnclass = "sf") %>% 
+  dplyr::select(postal) %>% 
+  filter(postal == "CA")
+```
+
+
+```{r, fig.cap = "**Figure 1:** The species richness, meaning the number of species present, of cetaceans on the California Coast. The presence of the cetaceans was based on a threshold of at least a probability of occurence of 0.6 for each species. Data from: Kaschner, K., Rius-Barile, J., Kesner-Reyes, K., Garilao, C., Kullander, S., Rees, T., & Froese, R. (2016). AquaMaps: Predicted range maps for aquatic species. www.aquamaps.org."}
+# read in the data
+my_files <- list.files(path = here("cetacean_data", "ca_cetaceans"), full.names = TRUE)
+
+species_stack <- raster::stack(my_files)
+
+species_df <- raster::rasterToPoints(species_stack) %>%
+  as.data.frame() %>% 
+  pivot_longer(cols = Balaenoptera_acutorostrata:Ziphius_cavirostris, names_to = "species", values_to = "probability") %>% 
+  mutate(presence = case_when(
+    probability >= 0.6 ~ 1,
+    probability < 0.6 ~ 0
+  )) %>% 
+  drop_na() %>% 
+  filter(presence == 1) %>% 
+  group_by(x,y) %>% 
+  count(presence)
+
+map <- st_transform(map, st_crs(species_stack))
+
+ggplot() +
+  geom_raster() +
+  geom_raster(data = species_df, aes(x = x, y = y, fill = n)) +
+  geom_sf(data = map, aes(inherit.aes = TRUE)) +
+  coord_sf(xlim = c(-125, -114), ylim = c(32, 42)) +
+  scale_fill_continuous(low = "lightblue", high = "blue", name = "Number of Cetacean Species") +
+  labs(title = "Species Richness of Cetaceans on the California Coast",
+       x = "Longitude",
+       y = "Latitude")
+
+```

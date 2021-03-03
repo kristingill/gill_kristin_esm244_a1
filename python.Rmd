@@ -1,8 +1,11 @@
 ---
 title: "Hangman Python"
+runtime: shiny
 output:
   distill::distill_article:
+    code_folding: true
     css: postcards.css
+    theme: darkly
 ---
 
 ```{r setup, include = FALSE, message = FALSE, warning = FALSE, cache = TRUE}
@@ -14,8 +17,8 @@ use_python("/usr/local/bin/python")
 knitr::knit_engines$set(python = reticulate::eng_python)
 ```
 
-
-```{python, cache = TRUE, eval = FALSE}
+# Hangman Game Code
+```{python, cache = TRUE}
 def play():
   name = input("What's your name?")
   print("Hi " + name + " let's play some hangman!")
@@ -84,5 +87,39 @@ def play():
       break
     
 play()
+```
+
+```{r}
+alphabet <- read_csv("alphabet.csv")
+```
+
+```{r}
+shinyApp(
+  
+  ui = fluidPage(
+    sidebarLayout(
+      selectInput(
+        inputId = "pick_letter",
+        label = "Let's play hangman. Guess a letter.",
+        choices = unique(alphabet$alphabet)
+    ))
+  ))
+
+server <- function(input, output) {
+  
+  alpha_reactive({
+    
+    alphabet %>% 
+      filter(alphabet %in% input$pick_letter)
+  })
+  
+  output$play_hangman <- renderPrint(
+    
+    "hello"
+    
+  )
+}
+
+shinyApp(ui = ui, server = server)
 ```
 

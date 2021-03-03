@@ -1,0 +1,179 @@
+---
+title: "Text Analysis"
+output:
+  distill::distill_article:
+    code_folding: true
+    css: postcards.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(tidyverse)
+library(tidytext)
+library(textdata)
+library(ggwordcloud)
+library(here)
+library(patchwork)
+library(plotly)
+library(scales)
+```
+
+```{r}
+# my own stop words data frame
+word <- c("thou", "thee", "ye", "thy", "hath", "cock", "ass", "yea", "saith", "hast", "shalt")
+stop_words_special <- data.frame(word)
+```
+
+```{r}
+# read in and wrangle matthew
+matthew <- read.delim(here("bible_text", "bible", "matthew.txt")) %>% 
+  separate(col = ST..MATTHEW, into = c("ch", "verse", "text", "extra", "extra2"), sep = ":") %>% 
+  unite(col = text, text:extra:extra2, sep = " ") %>% 
+  mutate(text = str_replace(text, pattern ="NA NA", replacement = " ")) %>% 
+  mutate(text = str_replace(text, pattern ="NA", replacement = " ")) %>% 
+  mutate(text = str_trim(text)) %>% 
+  mutate(text = str_squish(text)) %>% 
+  mutate(ch = str_squish(ch)) %>% 
+  mutate(verse = str_squish(verse)) %>% 
+  mutate(text = str_to_lower(text)) %>% 
+  unnest_tokens(word, text) %>% 
+  anti_join(stop_words) %>% 
+  anti_join(stop_words_special)
+
+# read in and wrangle first corinthians
+first_corinth <- read.delim(here("bible_text", "bible", "1corinth.txt")) %>% 
+  separate(col = X1.CORINTHIANS, into = c("ch", "verse", "text", "extra", "extra2"), sep = ":") %>% 
+  unite(col = text, text:extra:extra2, sep = " ") %>% 
+  mutate(text = str_replace(text, pattern ="NA NA", replacement = " ")) %>% 
+  mutate(text = str_replace(text, pattern ="NA", replacement = " ")) %>% 
+  mutate(text = str_trim(text)) %>% 
+  mutate(text = str_squish(text)) %>% 
+  mutate(ch = str_squish(ch)) %>% 
+  mutate(verse = str_squish(verse)) %>%
+  mutate(text = str_to_lower(text)) %>% 
+  unnest_tokens(word, text) %>% 
+  anti_join(stop_words) %>% 
+  anti_join(stop_words_special)
+```
+
+
+```{r}
+# counts
+
+matthew_counts <- matthew %>% 
+  count(word)
+
+first_corinth_counts <- first_corinth %>% 
+  count(word)
+
+# top 5
+top_5_matt <- matthew_counts %>%
+  arrange(-n) %>% 
+  slice(1:5)
+
+top_5_first_corinth <- first_corinth_counts %>% 
+  arrange(-n) %>% 
+  slice(1:5)
+```
+
+```{r}
+# Visualizing the counts
+matthew_graph <- ggplot(data = top_5_matt, aes(x = reorder(word, n), y = n)) +
+  geom_col(fill = "lightblue") +
+  theme_minimal() +
+  coord_flip() +
+  labs(x = "Word",
+       y = "Count",
+       title = "Top 5 Words in the Gospel of Matthew")
+
+first_corinth_graph <- ggplot(data = top_5_first_corinth, aes(x = reorder(word, n), y = n)) +
+  geom_col(fill = "lightblue4")+
+  theme_minimal() +
+  coord_flip() +
+  labs(x = "Word",
+       y = "Count",
+       title = "Top 5 Words in First Corinthians")
+
+```
+
+```{r, fig.cap = "**Figure 1:** The top five words that appear in the Gospel of Matthew and in First Corinthians. Words like 'the' and 'are' have been removed from the analysis. Since this is from the New King James Version, other words like 'thou', 'thee', 'ye', 'thy', 'hath', 'yea', 'saith', 'hast', 'shalt'."}
+# compound graph
+graph_compound <- (matthew_graph/first_corinth_graph) & plot_layout(guides = "collect")
+
+graph_compound
+```
+
+## Matthew Top 100 Word Cloud
+```{r, fig.cap = "**Figure 2:** A word cloud of the top 100 words from the Gospel of Matthew, New King James Version."}
+# word cloud
+matthew_cloud_counts <- matthew_counts %>% 
+  arrange(-n) %>% 
+  slice(1:100)
+
+matthew_cloud <- ggplot(data = matthew_cloud_counts, aes(label = word)) +
+  geom_text_wordcloud(aes(color = n, size = n)) +
+  scale_size_area(max_size = 15) +
+  labs(title = "Top 100 Words in the Gospel of Matthew")
+
+matthew_cloud
+```
+
+
+## First Corinthians Top 100 Word Cloud
+```{r, fig.cap = "**Figure 3:** A word cloud of the top 100 words from First Corinthians, New King James Version."}
+first_corinth_cloud_counts <- first_corinth_counts %>% 
+  arrange(-n) %>% 
+  slice(1:100)
+
+first_corinth_cloud <- ggplot(data = first_corinth_cloud_counts, aes(label = word)) +
+  geom_text_wordcloud(aes(color = n, size = n)) +
+  scale_size_area(max_size = 15) +
+  labs(title = "Top 100 Words in First Corinthians")
+
+first_corinth_cloud
+```
+
+## AFINN Analysis
+```{r, fig.cap = "**Figure 4:** Affin sentiment analysis, where positive numbers show positive sentiment and negative numbers indicate negative sentiment. The words 'cock' (rooster) and 'ass' (donkey) have been removed because their meaning is misconstrued by the sentiment analysis."}
+matthew_afinn <- matthew %>% 
+  inner_join(get_sentiments("afinn"))
+
+afinn_matt_means <- matthew_afinn %>% 
+  group_by(ch) %>% 
+  summarize(mean_afinn = mean(value)) %>% 
+  mutate(ch = as.numeric(ch)) %>% 
+  arrange(ch)
+
+affin_matt_graph <- ggplot(data = afinn_matt_means,
+       aes(x = ch, y = mean_afinn)) +
+  geom_col(fill = "lightblue") +
+  coord_flip() +
+  theme_minimal() +
+  labs(y = "Mean Afinn Sentiment",
+       x = "Chapter",
+       title = "Sentiment of the Gospel of Matthew")
+
+first_corinth_afinn <- first_corinth %>% 
+  inner_join(get_sentiments("afinn"))
+
+afinn_corinth_means <- first_corinth_afinn %>% 
+  group_by(ch) %>% 
+  summarize(mean_afinn = mean(value)) %>% 
+  mutate(ch = as.numeric(ch)) %>% 
+  arrange(ch)
+
+affin_corinth_graph <- ggplot(data = afinn_corinth_means,
+       aes(x = ch, y = mean_afinn)) +
+  geom_col(fill = "lightblue4") +
+  coord_flip() +
+  theme_minimal() +
+  labs(y = "Mean Afinn Sentiment",
+       x = "Chapter",
+       title = "Sentiment of First Corinthians")
+
+affin_compound <- (affin_matt_graph/affin_corinth_graph) & plot_layout(guides = "collect")
+
+affin_compound
+```
+
+**Data Citation:** Stewarton Bible School. Stewarton, Scotland. March 2000. Holy Bible: King James Version. http://www.stewartonbibleschool.org/bible/text/index.html
