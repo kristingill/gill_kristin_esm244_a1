@@ -20,9 +20,11 @@ navbar:
         - text: "Oil Spills"
           href: Project_2.html
         - text: "Hangman Python"
-          href: python.Rmd
+          href: python.html
         - text: "Cetacean Species Richness"
           href: project_4.html
+        - text: "Text Analysis"
+          href: project_5.html
 output: 
   distill::distill_article:
     theme: postcards.css
