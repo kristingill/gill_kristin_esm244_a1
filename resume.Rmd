@@ -16,7 +16,7 @@ library(purrr)
 ## EDUCATION
 ### Master of Environmental Science and Management, (Expected June 2022)
 - Bren School of Environmental Science & Management – University of California, Santa Barbara (UCSB)
-- Specialization: Economics and Politics of the Environment and Coastal Marine Resource Management
+- Specialization: Conservation Planning
 - Focus: Strategic Environmental Communication and Media
 - Highlighted Coursework: Writing Skills for Environmental Professionals, GIS, Data Visualization
 
