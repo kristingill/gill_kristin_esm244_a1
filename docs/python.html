@@ -2421,7 +2421,9 @@ Projects
 
 
 <div class="d-article">
-<h1 id="hangman-game-code">Hangman Game Code</h1>
+<h2 id="summary">Summary</h2>
+<p>This is a hangman game that can be played interactively in python. A player has 6 guesses and the guesses remaining will only decrease if the player guesses incorrectly. If they already guessed the letter, the number of guesses will not decrease. Random words are generated from a text file of words, and blanks are generated based on the number of letters in words. I have been thinking about if this can be incorporated into an R shinyapp while maintaining the use of Python functions.</p>
+<h2 id="hangman-game-code">Hangman Game Code</h2>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> play():</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  name <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;What&#39;s your name?&quot;</span>)</span>

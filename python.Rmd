@@ -15,7 +15,10 @@ use_python("/usr/local/bin/python")
 knitr::knit_engines$set(python = reticulate::eng_python)
 ```
 
-# Hangman Game Code
+## Summary
+This is a hangman game that can be played interactively in Python. A player has 6 guesses and the guesses remaining will only decrease if the player guesses incorrectly. If they already guessed the letter, the number of guesses will not decrease. Random words are generated from a text file of words, and blanks are generated based on the number of letters in words. I have been thinking about if this can be incorporated into an R ShinyApp while maintaining the use of Python functions. 
+
+## Hangman Game Code
 ```{python}
 def play():
   name = input("What's your name?")

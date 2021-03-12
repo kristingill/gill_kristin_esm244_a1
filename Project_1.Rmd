@@ -32,7 +32,7 @@ Snowshoe Hare physical data were provided by Dr. Kielland and colleagues, who co
 
 ## 3. Exploratory Findings
 ### A. Annual Juvenile Hare Trap Counts and Descriptive Statistics
-```{r, cache = TRUE, fig.cap = "**Figure 1:** The number of juvenile snowshoe hare trappings at Bonanza Creek Experimental Forest from 1999 to 2012. The trappings are an indication of population size. Data from: Kielland, K., F.S. Chapin, R.W. Ruess, and Bonanza Creek LTER. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present ver 22. Environmental Data Initiative. https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14"}
+```{r, cache = TRUE, fig.cap = "The number of juvenile snowshoe hare trappings at Bonanza Creek Experimental Forest from 1999 to 2012. The trappings are an indication of population size. Data from: Kielland, K., F.S. Chapin, R.W. Ruess, and Bonanza Creek LTER. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present ver 22. Environmental Data Initiative. https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14"}
 # have data only include hares with age "j"
 juvenile_hare <- bonanza_hare %>% 
   filter(age == "j") %>% 
@@ -71,7 +71,7 @@ The number of juvenile snowshoe hare trappings at Bonanza Creek was much lower i
 
 ### B. Visualizing Juvenile Hare Weights
 
-```{r, cache = TRUE, fig.cap = "**Figure 2:** The scatterplots for each location show the individual weights of the hares, with color defining male or female. The boxplots on top show the spread and median of the data for males and females at each location. The weight is in grams. The sex was not recorded for some of the juvenile snowshoe hairs, and this is shown as NA. The Bonanza Black Spruce is a location with black spruce trees. The Bonanza Mature location has mature white spruce, paper birch, alder, and black spruce trees. The Bonanza Riparian location is in a flood zone. Data from: Kielland, K., F.S. Chapin, R.W. Ruess, and Bonanza Creek LTER. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present ver 22. Environmental Data Initiative. https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14"}
+```{r, cache = TRUE, fig.cap = "The scatterplots for each location show the individual weights of the hares, with color defining male or female. The boxplots on top show the spread and median of the data for males and females at each location. The weight is in grams. The sex was not recorded for some of the juvenile snowshoe hairs, and this is shown as NA. The Bonanza Black Spruce is a location with black spruce trees. The Bonanza Mature location has mature white spruce, paper birch, alder, and black spruce trees. The Bonanza Riparian location is in a flood zone. Data from: Kielland, K., F.S. Chapin, R.W. Ruess, and Bonanza Creek LTER. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present ver 22. Environmental Data Initiative. https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14"}
 # compare juvenile hare weights by sex and site(grid)
 juvenile_weight <- juvenile_hare %>% 
   select(grid, sex, weight) %>% 
@@ -95,7 +95,7 @@ ggplot(data = juvenile_weight, aes(x = sex,
   theme_bw()
 ```
 
-```{r, cache = TRUE, fig.cap = "**Figure 3:** The Histograms for each location show the count of snowshoe hares for different weights. The colors differentiate male, female, and NA. Data from: Kielland, K., F.S. Chapin, R.W. Ruess, and Bonanza Creek LTER. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present ver 22. Environmental Data Initiative. https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14"}
+```{r, cache = TRUE, fig.cap = "The Histograms for each location show the count of snowshoe hares for different weights. The colors differentiate male, female, and NA. Data from: Kielland, K., F.S. Chapin, R.W. Ruess, and Bonanza Creek LTER. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present ver 22. Environmental Data Initiative. https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14"}
 # histogram of mean weights
 ggplot(data = juvenile_weight, aes(x = weight)) +
   geom_histogram(aes(fill = sex),
@@ -185,7 +185,7 @@ For each location, the male juvenile snowshoe hares have higher average weights 
 
 ### D. Relationship between Juvenile Weight and Hind Foot Length 
 
-```{r, cache = TRUE, fig.cap = "**Figure 4:** The relationship between juvenile snowshoe hare weight (grams) and hind foot length (mm). Data from: Kielland, K., F.S. Chapin, R.W. Ruess, and Bonanza Creek LTER. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present ver 22. Environmental Data Initiative. https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14"}
+```{r, cache = TRUE, fig.cap = "The relationship between juvenile snowshoe hare weight (grams) and hind foot length (mm). Data from: Kielland, K., F.S. Chapin, R.W. Ruess, and Bonanza Creek LTER. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present ver 22. Environmental Data Initiative. https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14"}
 # juvenile hare weight and hind foot length 
 juvenile_weight_hindfoot <- juvenile_hare %>% 
   select(year, weight, hindft, grid, sex) %>% 
@@ -225,7 +225,7 @@ hare_lm_out <- broom::glance(hare_lm)
 plot(hare_lm)
 ```
 
-```{r, cache = TRUE, fig.cap = "**Figure 5:** Linear regression desrcibing the relationship betweeen juvenile snowshoe hare weight(g) and hind foot length (mm). Data from 1999 to 2012, collected at the Bonanza Creek LTER. Data from: Kielland, K., F.S. Chapin, R.W. Ruess, and Bonanza Creek LTER. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present ver 22. Environmental Data Initiative. https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14"}
+```{r, cache = TRUE, fig.cap = "Linear regression desrcibing the relationship betweeen juvenile snowshoe hare weight(g) and hind foot length (mm). Data from 1999 to 2012, collected at the Bonanza Creek LTER. Data from: Kielland, K., F.S. Chapin, R.W. Ruess, and Bonanza Creek LTER. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present ver 22. Environmental Data Initiative. https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14"}
 # Visualizing the linear model
 ggplot(data = juvenile_weight_hindfoot, aes(x = hindft,
                                             y = weight)) +

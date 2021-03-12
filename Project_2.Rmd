@@ -15,7 +15,10 @@ library(janitor)
 library(sf)
 ```
 
-```{r, include = FALSE}
+## Summary
+These maps show the oil spills in California in 2008. The first map is an interactive map showing all of the oil spill incidents in 2008. The second map shows the counts of inland oil spills in California in 2008.
+
+```{r, cache = TRUE}
 # read in the data
 oil_spill <- read_sf(here("data_3", "oil_spill", "ds394.shp")) %>% 
   clean_names()
@@ -36,7 +39,7 @@ tm_shape(oil_spill) +
 ```
 
 ## Map of Inland Oil Spills by County
-```{r, fig.cap = "**Map 1:** Inland oil spill counts by California county. Data from: Oil Spill Incident Tracking. 2009-07-23. California Department of Fish and Game, Office of Spill Prevention and Response. https://map.dfg.ca.gov/metadata/ds0394.html"}
+```{r, fig.cap = "Inland oil spill counts by California county in 2008. Data from: Oil Spill Incident Tracking. 2009-07-23. California Department of Fish and Game, Office of Spill Prevention and Response. https://map.dfg.ca.gov/metadata/ds0394.html"}
 # finding the counts
 oil_spill_inland <- oil_spill %>% 
   filter(inlandmari == "Inland") %>% 

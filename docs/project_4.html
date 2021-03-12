@@ -2421,6 +2421,9 @@ Projects
 
 
 <div class="d-article">
+<h2 id="summary">Summary</h2>
+<p>This is a map showing the species richness of cetaceans along the California Coast. I read in a raster stack of cetacean species ranges. I considered a species present if its probability of of presence was greater than or equal to 60%. I then counted the number of species present within each raster cell and produced the map showing species richness. The raster was paired with a map of California from the <code>rnaturalearth</code> package to help visualize the data and understand the location of it.</p>
+<h2 id="data-wrangling">Data Wrangling</h2>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2434,6 +2437,7 @@ Show code
 </div>
 </details>
 </div>
+<h2 id="creating-the-species-richness-raster">Creating the Species Richness Raster</h2>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>

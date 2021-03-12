@@ -2421,6 +2421,9 @@ Projects
 
 
 <div class="d-article">
+<h2 id="summary">Summary</h2>
+<p>This is a text analysis that compares the top words used in Matthew to those in 1st Corinthians. There is also a AFINN sentiment analysis of all of the words in both books. To conduct this analysis, the text files first needed to be cleaned up and separated into one word per row.</p>
+<h2 id="data-wrangling">Data Wrangling</h2>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2430,17 +2433,8 @@ Show code
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># my own stop words data frame</span>
 <span class='va'>word</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"thou"</span>, <span class='st'>"thee"</span>, <span class='st'>"ye"</span>, <span class='st'>"thy"</span>, <span class='st'>"hath"</span>, <span class='st'>"cock"</span>, <span class='st'>"ass"</span>, <span class='st'>"yea"</span>, <span class='st'>"saith"</span>, <span class='st'>"hast"</span>, <span class='st'>"shalt"</span><span class='op'>)</span>
 <span class='va'>stop_words_special</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span><span class='va'>word</span><span class='op'>)</span>
-</code></pre>
-</div>
-</details>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<details>
-<summary>
-Show code
-</summary>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># read in and wrangle matthew</span>
+
+<span class='co'># read in and wrangle matthew</span>
 <span class='va'>matthew</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.delim</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"bible_text"</span>, <span class='st'>"bible"</span>, <span class='st'>"matthew.txt"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>separate</span><span class='op'>(</span>col <span class='op'>=</span> <span class='va'>ST..MATTHEW</span>, into <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"ch"</span>, <span class='st'>"verse"</span>, <span class='st'>"text"</span>, <span class='st'>"extra"</span>, <span class='st'>"extra2"</span><span class='op'>)</span>, sep <span class='op'>=</span> <span class='st'>":"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>unite</span><span class='op'>(</span>col <span class='op'>=</span> <span class='va'>text</span>, <span class='va'>text</span><span class='op'>:</span><span class='va'>extra</span><span class='op'>:</span><span class='va'>extra2</span>, sep <span class='op'>=</span> <span class='st'>" "</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
@@ -2469,18 +2463,8 @@ Show code
   <span class='fu'><a href='https://rdrr.io/pkg/tidytext/man/unnest_tokens.html'>unnest_tokens</a></span><span class='op'>(</span><span class='va'>word</span>, <span class='va'>text</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>anti_join</span><span class='op'>(</span><span class='va'>stop_words</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>anti_join</span><span class='op'>(</span><span class='va'>stop_words_special</span><span class='op'>)</span>
-</code></pre>
-</div>
-</details>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<details>
-<summary>
-Show code
-</summary>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># counts</span>
 
+<span class='co'># counts</span>
 <span class='va'>matthew_counts</span> <span class='op'>&lt;-</span> <span class='va'>matthew</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>count</span><span class='op'>(</span><span class='va'>word</span><span class='op'>)</span>
 
@@ -2495,17 +2479,8 @@ Show code
 <span class='va'>top_5_first_corinth</span> <span class='op'>&lt;-</span> <span class='va'>first_corinth_counts</span> <span class='op'>%&gt;%</span> 
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='op'>-</span><span class='va'>n</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/slice.html'>slice</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span><span class='op'>)</span>
-</code></pre>
-</div>
-</details>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<details>
-<summary>
-Show code
-</summary>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Visualizing the counts</span>
+
+<span class='co'># Visualizing the counts</span>
 <span class='va'>matthew_graph</span> <span class='op'>&lt;-</span> <span class='fu'>ggplot</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>top_5_matt</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/reorder.factor.html'>reorder</a></span><span class='op'>(</span><span class='va'>word</span>, <span class='va'>n</span><span class='op'>)</span>, y <span class='op'>=</span> <span class='va'>n</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'>geom_col</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"lightblue"</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'>theme_minimal</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
@@ -2525,6 +2500,7 @@ Show code
 </div>
 </details>
 </div>
+<h2 id="compound-graph">Compound Graph</h2>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2538,10 +2514,10 @@ Show code
 </code></pre>
 </div>
 </details>
-<div class="figure"><span id="fig:unnamed-chunk-5"></span>
-<img src="project_5_files/figure-html5/unnamed-chunk-5-1.png" alt="**Figure 1:** The top five words that appear in the Gospel of Matthew and in First Corinthians. Words like 'the' and 'are' have been removed from the analysis. Since this is from the New King James Version, other words like 'thou', 'thee', 'ye', 'thy', 'hath', 'yea', 'saith', 'hast', 'shalt'." width="624" />
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<img src="project_5_files/figure-html5/unnamed-chunk-2-1.png" alt="The top five words that appear in the Gospel of Matthew and in First Corinthians. Words like 'the' and 'are' have been removed from the analysis. Since this is from the New King James Version, other words like 'thou', 'thee', 'ye', 'thy', 'hath', 'yea', 'saith', 'hast', 'shalt'." width="624" />
 <p class="caption">
-Figure 1: <strong>Figure 1:</strong> The top five words that appear in the Gospel of Matthew and in First Corinthians. Words like ‘the’ and ‘are’ have been removed from the analysis. Since this is from the New King James Version, other words like ‘thou’, ‘thee’, ‘ye’, ‘thy’, ‘hath’, ‘yea’, ‘saith’, ‘hast’, ‘shalt’.
+Figure 1: The top five words that appear in the Gospel of Matthew and in First Corinthians. Words like ‘the’ and ‘are’ have been removed from the analysis. Since this is from the New King James Version, other words like ‘thou’, ‘thee’, ‘ye’, ‘thy’, ‘hath’, ‘yea’, ‘saith’, ‘hast’, ‘shalt’.
 </p>
 </div>
 </div>
@@ -2566,10 +2542,10 @@ Show code
 </code></pre>
 </div>
 </details>
-<div class="figure"><span id="fig:unnamed-chunk-6"></span>
-<img src="project_5_files/figure-html5/unnamed-chunk-6-1.png" alt="**Figure 2:** A word cloud of the top 100 words from the Gospel of Matthew, New King James Version." width="624" />
+<div class="figure"><span id="fig:unnamed-chunk-3"></span>
+<img src="project_5_files/figure-html5/unnamed-chunk-3-1.png" alt="A word cloud of the top 100 words from the Gospel of Matthew, New King James Version." width="624" />
 <p class="caption">
-Figure 2: <strong>Figure 2:</strong> A word cloud of the top 100 words from the Gospel of Matthew, New King James Version.
+Figure 2: A word cloud of the top 100 words from the Gospel of Matthew, New King James Version.
 </p>
 </div>
 </div>
@@ -2593,10 +2569,10 @@ Show code
 </code></pre>
 </div>
 </details>
-<div class="figure"><span id="fig:unnamed-chunk-7"></span>
-<img src="project_5_files/figure-html5/unnamed-chunk-7-1.png" alt="**Figure 3:** A word cloud of the top 100 words from First Corinthians, New King James Version." width="624" />
+<div class="figure"><span id="fig:unnamed-chunk-4"></span>
+<img src="project_5_files/figure-html5/unnamed-chunk-4-1.png" alt="A word cloud of the top 100 words from First Corinthians, New King James Version." width="624" />
 <p class="caption">
-Figure 3: <strong>Figure 3:</strong> A word cloud of the top 100 words from First Corinthians, New King James Version.
+Figure 3: A word cloud of the top 100 words from First Corinthians, New King James Version.
 </p>
 </div>
 </div>
@@ -2649,10 +2625,10 @@ Show code
 </code></pre>
 </div>
 </details>
-<div class="figure"><span id="fig:unnamed-chunk-8"></span>
-<img src="project_5_files/figure-html5/unnamed-chunk-8-1.png" alt="**Figure 4:** Affin sentiment analysis, where positive numbers show positive sentiment and negative numbers indicate negative sentiment. The words 'cock' (rooster) and 'ass' (donkey) have been removed because their meaning is misconstrued by the sentiment analysis." width="624" />
+<div class="figure"><span id="fig:unnamed-chunk-5"></span>
+<img src="project_5_files/figure-html5/unnamed-chunk-5-1.png" alt="Affin sentiment analysis, where positive numbers show positive sentiment and negative numbers indicate negative sentiment. The words 'cock' (rooster) and 'ass' (donkey) have been removed because their meaning is misconstrued by the sentiment analysis." width="624" />
 <p class="caption">
-Figure 4: <strong>Figure 4:</strong> Affin sentiment analysis, where positive numbers show positive sentiment and negative numbers indicate negative sentiment. The words ‘cock’ (rooster) and ‘ass’ (donkey) have been removed because their meaning is misconstrued by the sentiment analysis.
+Figure 4: Affin sentiment analysis, where positive numbers show positive sentiment and negative numbers indicate negative sentiment. The words ‘cock’ (rooster) and ‘ass’ (donkey) have been removed because their meaning is misconstrued by the sentiment analysis.
 </p>
 </div>
 </div>

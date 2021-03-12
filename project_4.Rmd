@@ -18,14 +18,17 @@ library(rnaturalearthhires)
 library(rgeos)
 ```
 
+## Summary
+This is a map showing the species richness of cetaceans along the California Coast. I read in a raster stack of cetacean species ranges. I considered a species present if its probability of presence was greater than or equal to 60%. I then counted the number of species present within each raster cell and produced the map showing species richness. The raster was paired with a map of California from the `rnaturalearth` package to help visualize the data and understand the location of it.
 
+## Data Wrangling
 ```{r}
 map <- ne_states(country = "united states of america", returnclass = "sf") %>% 
   dplyr::select(postal) %>% 
   filter(postal == "CA")
 ```
 
-
+## Creating the Species Richness Raster
 ```{r, fig.cap = "**Figure 1:** The species richness, meaning the number of species present, of cetaceans on the California Coast. The presence of the cetaceans was based on a threshold of at least a probability of occurence of 0.6 for each species. Data from: Kaschner, K., Rius-Barile, J., Kesner-Reyes, K., Garilao, C., Kullander, S., Rees, T., & Froese, R. (2016). AquaMaps: Predicted range maps for aquatic species. www.aquamaps.org."}
 # read in the data
 my_files <- list.files(path = here("cetacean_data", "ca_cetaceans"), full.names = TRUE)

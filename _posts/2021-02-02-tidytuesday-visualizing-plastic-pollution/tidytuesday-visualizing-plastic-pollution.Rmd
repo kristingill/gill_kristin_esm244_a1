@@ -9,7 +9,7 @@ date: 02-02-2021
 output:
   distill::distill_article:
     self_contained: false
-    code_folding: hide
+    code_folding: true
 ---
 
 ![Pepsi Plastic Pollution *Image from The Guardian*](pepsi_plastic.jpg)

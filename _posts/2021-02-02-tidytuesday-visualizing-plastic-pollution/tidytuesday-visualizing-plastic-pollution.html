@@ -110,7 +110,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["TidyTuesday: Visualizing Plastic Pollution"]},{"type":"character","attributes":{},"value":["This post contains the code and a map of Pepsi plastic pollution that I created for the 2021-01-26 TidyTuesday.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Kristin Gill"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["02-02-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["hide"]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["TidyTuesday: Visualizing Plastic Pollution"]},{"type":"character","attributes":{},"value":["This post contains the code and a map of Pepsi plastic pollution that I created for the 2021-01-26 TidyTuesday.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Kristin Gill"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["02-02-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1433,7 +1433,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="tidytuesday-visualizing-plastic-pollution_files/header-attrs-2.6.6/header-attrs.js"></script>
+  <script src="tidytuesday-visualizing-plastic-pollution_files/header-attrs-2.7/header-attrs.js"></script>
   <script src="tidytuesday-visualizing-plastic-pollution_files/jquery-1.11.3/jquery.min.js"></script>
   <script src="tidytuesday-visualizing-plastic-pollution_files/popper-2.6.0/popper.min.js"></script>
   <link href="tidytuesday-visualizing-plastic-pollution_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1495,7 +1495,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
-hide
+Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># read in the data</span>
@@ -1536,7 +1536,7 @@ hide
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
-hide
+Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>data_shapefile</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://r-spatial.github.io/sf/reference/st_as_sf.html'>st_as_sf</a></span><span class='op'>(</span><span class='va'>merge_2</span>, coords <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"longitude"</span>, <span class='st'>"latitude"</span><span class='op'>)</span><span class='op'>)</span>
@@ -1567,7 +1567,7 @@ geographic CRS: WGS 84
 #   [°]&gt;</code></pre>
 <details>
 <summary>
-hide
+Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://r-spatial.github.io/sf/reference/st_crs.html'>st_crs</a></span><span class='op'>(</span><span class='va'>data_shapefile</span><span class='op'>)</span> <span class='op'>=</span> <span class='fl'>4326</span>
@@ -1579,7 +1579,7 @@ hide
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
-hide
+Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>

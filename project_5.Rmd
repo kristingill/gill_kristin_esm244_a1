@@ -18,13 +18,15 @@ library(plotly)
 library(scales)
 ```
 
+## Summary
+This is a text analysis that compares the top words used in Matthew to those in 1st Corinthians. There is also a AFINN sentiment analysis of all of the words in both books. To conduct this analysis, the text files first needed to be cleaned up and separated into one word per row. 
+
+## Data Wrangling
 ```{r}
 # my own stop words data frame
 word <- c("thou", "thee", "ye", "thy", "hath", "cock", "ass", "yea", "saith", "hast", "shalt")
 stop_words_special <- data.frame(word)
-```
 
-```{r}
 # read in and wrangle matthew
 matthew <- read.delim(here("bible_text", "bible", "matthew.txt")) %>% 
   separate(col = ST..MATTHEW, into = c("ch", "verse", "text", "extra", "extra2"), sep = ":") %>% 
@@ -54,12 +56,8 @@ first_corinth <- read.delim(here("bible_text", "bible", "1corinth.txt")) %>%
   unnest_tokens(word, text) %>% 
   anti_join(stop_words) %>% 
   anti_join(stop_words_special)
-```
 
-
-```{r}
 # counts
-
 matthew_counts <- matthew %>% 
   count(word)
 
@@ -74,9 +72,7 @@ top_5_matt <- matthew_counts %>%
 top_5_first_corinth <- first_corinth_counts %>% 
   arrange(-n) %>% 
   slice(1:5)
-```
 
-```{r}
 # Visualizing the counts
 matthew_graph <- ggplot(data = top_5_matt, aes(x = reorder(word, n), y = n)) +
   geom_col(fill = "lightblue") +
@@ -93,10 +89,10 @@ first_corinth_graph <- ggplot(data = top_5_first_corinth, aes(x = reorder(word, 
   labs(x = "Word",
        y = "Count",
        title = "Top 5 Words in First Corinthians")
-
 ```
 
-```{r, fig.cap = "**Figure 1:** The top five words that appear in the Gospel of Matthew and in First Corinthians. Words like 'the' and 'are' have been removed from the analysis. Since this is from the New King James Version, other words like 'thou', 'thee', 'ye', 'thy', 'hath', 'yea', 'saith', 'hast', 'shalt'."}
+## Compound Graph
+```{r, fig.cap = "The top five words that appear in the Gospel of Matthew and in First Corinthians. Words like 'the' and 'are' have been removed from the analysis. Since this is from the New King James Version, other words like 'thou', 'thee', 'ye', 'thy', 'hath', 'yea', 'saith', 'hast', 'shalt'."}
 # compound graph
 graph_compound <- (matthew_graph/first_corinth_graph) & plot_layout(guides = "collect")
 
@@ -104,7 +100,7 @@ graph_compound
 ```
 
 ## Matthew Top 100 Word Cloud
-```{r, fig.cap = "**Figure 2:** A word cloud of the top 100 words from the Gospel of Matthew, New King James Version."}
+```{r, fig.cap = "A word cloud of the top 100 words from the Gospel of Matthew, New King James Version."}
 # word cloud
 matthew_cloud_counts <- matthew_counts %>% 
   arrange(-n) %>% 
@@ -120,7 +116,7 @@ matthew_cloud
 
 
 ## First Corinthians Top 100 Word Cloud
-```{r, fig.cap = "**Figure 3:** A word cloud of the top 100 words from First Corinthians, New King James Version."}
+```{r, fig.cap = "A word cloud of the top 100 words from First Corinthians, New King James Version."}
 first_corinth_cloud_counts <- first_corinth_counts %>% 
   arrange(-n) %>% 
   slice(1:100)
@@ -134,7 +130,7 @@ first_corinth_cloud
 ```
 
 ## AFINN Analysis
-```{r, fig.cap = "**Figure 4:** Affin sentiment analysis, where positive numbers show positive sentiment and negative numbers indicate negative sentiment. The words 'cock' (rooster) and 'ass' (donkey) have been removed because their meaning is misconstrued by the sentiment analysis."}
+```{r, fig.cap = "Affin sentiment analysis, where positive numbers show positive sentiment and negative numbers indicate negative sentiment. The words 'cock' (rooster) and 'ass' (donkey) have been removed because their meaning is misconstrued by the sentiment analysis."}
 matthew_afinn <- matthew %>% 
   inner_join(get_sentiments("afinn"))
 
